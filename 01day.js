@@ -32,4 +32,24 @@ const findLongestWord=(str)=>{
 }
 // Example usage
 var sentence = "This is a sentence with some long words";
-console.log(findLongestWord(sentence)); // Output: "sentence"
+//console.log(findLongestWord(sentence)); // Output: "sentence"
+
+
+//return #tagstring 
+
+function generateHash(str){
+    if(str.length >= 280 || str.trim().length === 0){
+      return false
+    }
+    str=str.split(" ");
+    str=str.map((currEle)=>
+        currEle.replace(currEle[0],currEle[0].toUpperCase())
+    );
+    str=str.join("");
+    return `#${str}`;
+    
+    // const strUpperCase = str.split(" ").map((curr) => {   return curr.charAt(0).toUpperCase() + curr.slice(1)}).join("")
+    // const hashStr = `#${strUpperCase}`
+    // return hashStr
+  }
+  console.log(generateHash("This is a sentence with some long words"));
